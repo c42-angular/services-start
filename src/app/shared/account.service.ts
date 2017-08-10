@@ -1,3 +1,5 @@
+import { LoggingService } from "app/shared/logging.service";
+
 export class AccountService {
     accounts = [
     {
@@ -14,11 +16,16 @@ export class AccountService {
     }
   ];
 
+  constructor(private loggingService: LoggingService) {
+
+  }
   addAccount(name: string, status: string) {
     this.accounts.push({name: name, status: status});
+    this.loggingService.logStatus(status + 'from AccountService.addAccount()');
   }
 
   updateStatus(id: number, status: string) {
     this.accounts[id].status = status;
+    this.loggingService.logStatus(status + 'from AccountService.addAccount()');
   }
 }
