@@ -1,5 +1,7 @@
-import { LoggingService } from "app/shared/logging.service";
+import { LoggingService } from 'app/shared/logging.service';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class AccountService {
     accounts = [
     {
